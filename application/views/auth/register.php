@@ -108,17 +108,25 @@
                                     </div>
                                 </div>
 
-                                <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
-                                <div class="row my-4">
-                                    <div class="col-12">
-                                        <div class="custom-control custom-control-alternative custom-checkbox">
-                                            <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                                            <label class="custom-control-label" for="customCheckRegister">
-                                                <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
-                                            </label>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
+                                        <input class="form-control" placeholder="Nama Desa" type="text">
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Alamat Subdomain" type="text" id="subdomain" name="subdomain">
+                                        <small id="notif" class="text-danger pl-3"></small>
+                                    </div>
+                                </div>
+
                                 <div class="text-center">
                                     <button type="button" class="btn btn-primary mt-4">DAFTAR</button>
                                 </div>

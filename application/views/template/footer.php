@@ -14,6 +14,22 @@
 <script src="<?= base_url('assets/js/argon.min9f1e.js?v=1.1.0') ?>"></script>
 <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
+<script>
+  $('#subdomain').on('keyup', function() {
+    const subdomain = $('#subdomain').val();
+
+    $.ajax({
+      url: "<?= base_url('auth/checkSubdomain') ?>",
+      type: 'post',
+      data: {
+        subdomain: subdomain
+      },
+      success: function() {
+        $('#notif').html('success')
+      }
+    });
+  });
+</script>
 </body>
 
 </html>

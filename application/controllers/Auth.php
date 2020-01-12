@@ -4,21 +4,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Auth extends CI_Controller
 {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->library('form_validation');
+	}
+
 	public function index()
 	{
 		$this->load->view('welcome_message');
@@ -29,5 +20,26 @@ class Auth extends CI_Controller
 		$this->load->view('template/header');
 		$this->load->view('auth/register');
 		$this->load->view('template/footer');
+	}
+
+	public function checkSubdomain()
+	{
+		$subdomain = $this->input->post('subdomain');
+		$result = $this->db->get_where('desa', ['subdomain' => $subdomain])->row_array();
+		if ($result) {
+			echo "
+			<script>
+				document.getElementById('notif').innerHTML='subdomain telah ada!';
+				console.log('ada')
+			</script>
+			";
+		} else {
+			echo "
+			<script>
+				document.getElementById('notif').innerHTML='subdomain tersedia!';
+				console.log('tidak')
+			</script>
+			";
+		}
 	}
 }
