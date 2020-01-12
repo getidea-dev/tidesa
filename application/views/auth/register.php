@@ -58,13 +58,14 @@
                             <div class="text-center text-muted mb-4">
                                 <small>Or sign up with credentials</small>
                             </div>
-                            <form role="form">
+                            <?= $this->session->flashdata('message'); ?>
+                            <form role="form" method="post" action="<?= base_url('auth/register') ?>">
                                 <div class="form-group">
                                     <div class="input-group input-group-alternative mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Nama Lengkap" type="text">
+                                        <input class="form-control" placeholder="Nama Lengkap" name="nama_lengkap" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -72,7 +73,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Email" type="email">
+                                        <input class="form-control" placeholder="Email" name="email" type="email">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -80,7 +81,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Tempat Lahir" type="text">
+                                        <input class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -88,7 +89,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Tanggal Lahir" type="date">
+                                        <input class="form-control" placeholder="Tanggal Lahir" type="date" name="tanggal_lahir">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -96,7 +97,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Nomor Telepon" type="text">
+                                        <input class="form-control" placeholder="Nomor Telepon" type="text" name="no_telepon">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -104,16 +105,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="File SK" type="file">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="Nama Desa" type="text">
+                                        <input class="form-control" placeholder="File SK" type="file" name="file">
                                     </div>
                                 </div>
 
@@ -122,13 +114,22 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Alamat Subdomain" type="text" id="subdomain" name="subdomain">
-                                        <small id="notif" class="text-danger pl-3"></small>
+                                        <input class="form-control" placeholder="Nama Desa" type="text" name="nama_desa">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="domain">
+                                        <p id="notif"></p>
                                     </div>
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-primary mt-4">DAFTAR</button>
+                                    <button type="submit" class="btn btn-primary mt-4">DAFTAR</button>
                                 </div>
                             </form>
                         </div>

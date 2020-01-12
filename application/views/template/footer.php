@@ -17,15 +17,20 @@
 <script>
   $('#subdomain').on('keyup', function() {
     const subdomain = $('#subdomain').val();
-
+    // console.log(subdomain);
     $.ajax({
       url: "<?= base_url('auth/checkSubdomain') ?>",
-      type: 'post',
+      method: 'post',
       data: {
         subdomain: subdomain
       },
-      success: function() {
-        $('#notif').html('success')
+      dataType: 'json',
+      success: function(data) {
+        if (data) {
+          $('#notif').html('<span style="font-size: 1em; color: Tomato;"><i class="fas fa-window-close"></i></span>');
+        } else {
+          $('#notif').html('<span style="font-size: 1em; color: green;"><i class="fas fa-check"></i></span>');
+        }
       }
     });
   });

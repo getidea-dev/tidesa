@@ -8,6 +8,7 @@ class Auth extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
+		$this->load->library('session');
 	}
 
 	public function index()
@@ -17,29 +18,47 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
-		$this->load->view('template/header');
-		$this->load->view('auth/register');
-		$this->load->view('template/footer');
+		$this->form_validation->set_rules('nama_lengkap', 'Nama lengkap', 'required|trim');
+		$this->form_validation->set_rules('email', 'Email',  'required|trim|valid_email');
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat lahir', 'required|trim');
+		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal lahir', 'required|trim');
+		$this->form_validation->set_rules('no_telepon', 'No telepon', 'required|trim');
+		$this->form_validation->set_rules('file', 'File', 'required|trim');
+		$this->form_validation->set_rules('nama_desa', 'Nama desa', 'required|trim');
+		$this->form_validation->set_rules('domain', 'Domain', 'required|trim');
+
+		if ($this->form_validation->run() == false) {
+			$this->load->view('template/header');
+			$this->load->view('auth/register');
+			$this->load->view('template/footer');
+		} else {
+			$data = [
+				'nama_lengkap' => htmlspecialchars($this->input->post('nama_lengkap')),
+				'email' => htmlspecialchars($this->input->post('email')),
+				'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir')),
+				'tanggal_lahir' => htmlspecialchars($this->input->post('tanggal_lahir')),
+				'no_telepon' => htmlspecialchars($this->input->post('no_telepon')),
+				'file' => 'gambar',
+				'nama_desa' => htmlspecialchars($this->input->post('nama_desa')),
+				'domain' => htmlspecialchars($this->input->post('domain'))
+			];
+
+			$this->db->insert('pengajuan_desa', $data);
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Desa anda telah berhasil di daftarkan! Menunggu konfirmasi admin</div>');
+			redirect('auth/register');
+		}
 	}
 
 	public function checkSubdomain()
 	{
 		$subdomain = $this->input->post('subdomain');
-		$result = $this->db->get_where('desa', ['subdomain' => $subdomain])->row_array();
-		if ($result) {
-			echo "
-			<script>
-				document.getElementById('notif').innerHTML='subdomain telah ada!';
-				console.log('ada')
-			</script>
-			";
-		} else {
-			echo "
-			<script>
-				document.getElementById('notif').innerHTML='subdomain tersedia!';
-				console.log('tidak')
-			</script>
-			";
-		}
+
+		echo json_encode($this->db->get_where('desa', ['domain' => $subdomain])->row_array());
+	}
+
+	public function test()
+	{
+		$result = $this->db->get_where('desa', ['domain' => '0'])->row_array();
+		var_dump($result);
 	}
 }
