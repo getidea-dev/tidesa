@@ -18,6 +18,7 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
+		//validasi form
 		$this->form_validation->set_rules('nama_lengkap', 'Nama lengkap', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email',  'required|trim|valid_email');
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat lahir', 'required|trim');
@@ -25,13 +26,15 @@ class Auth extends CI_Controller
 		$this->form_validation->set_rules('no_telepon', 'No telepon', 'required|trim');
 		$this->form_validation->set_rules('file', 'File', 'required|trim');
 		$this->form_validation->set_rules('nama_desa', 'Nama desa', 'required|trim');
-		$this->form_validation->set_rules('domain', 'Domain', 'required|trim');
+		$this->form_validation->set_rules('subdomain', 'Subomain', 'required|trim');
 
 		if ($this->form_validation->run() == false) {
+			//jika gagal validasi
 			$this->load->view('template/header');
 			$this->load->view('auth/register');
 			$this->load->view('template/footer');
 		} else {
+			//jika berhasil
 			$data = [
 				'nama_lengkap' => htmlspecialchars($this->input->post('nama_lengkap')),
 				'email' => htmlspecialchars($this->input->post('email')),
@@ -40,7 +43,7 @@ class Auth extends CI_Controller
 				'no_telepon' => htmlspecialchars($this->input->post('no_telepon')),
 				'file' => 'gambar',
 				'nama_desa' => htmlspecialchars($this->input->post('nama_desa')),
-				'domain' => htmlspecialchars($this->input->post('domain'))
+				'subdomain' => htmlspecialchars($this->input->post('domain'))
 			];
 
 			$this->db->insert('pengajuan_desa', $data);
@@ -53,12 +56,12 @@ class Auth extends CI_Controller
 	{
 		$subdomain = $this->input->post('subdomain');
 
-		echo json_encode($this->db->get_where('desa', ['domain' => $subdomain])->row_array());
+		echo json_encode($this->db->get_where('desa', ['subdomain' => $subdomain])->row_array());
 	}
 
 	public function test()
 	{
-		$result = $this->db->get_where('desa', ['domain' => '0'])->row_array();
+		$result = $this->db->get_where('desa', ['subdomain' => '0'])->row_array();
 		var_dump($result);
 	}
 }

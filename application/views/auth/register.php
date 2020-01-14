@@ -99,30 +99,32 @@
                                     <input class="form-control" placeholder="Nomor Telepon" type="text" name="no_telepon">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <h5>FILE SK</h5>
-                                <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
-                                    <div class="fallback">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="projectCoverUploads">
-                                            <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
-                                        </div>
+                            <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
+                                <div class="fallback">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="projectCoverUploads">
+                                        <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
                                     </div>
-                                    <div class="dz-preview dz-preview-single">
-                                        <div class="dz-preview-cover">
-                                            <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
-                                        </div>
+                                </div>
+                                <div class="dz-preview dz-preview-single">
+                                    <div class="dz-preview-cover">
+                                        <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
                                     </div>
                                 </div>
                             </div>
+                            
+                            
                             <div class="form-group">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Nama Desa" type="text" name="nama_desa">
+                                    <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="subdomain">
+                                    <p id="notif"></p>
                                 </div>
+                                <input class="form-control" placeholder="Nama Desa" type="text" name="nama_desa">
                             </div>
+                            
                             <div class="form-group">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
