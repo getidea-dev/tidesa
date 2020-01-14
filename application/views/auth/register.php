@@ -26,7 +26,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </nav>
@@ -101,33 +100,40 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    <div class="dropzone dropzone-single mb-3" data-toggle="dropzone" data-dropzone-url="http://">
+                                        <div class="fallback">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="projectCoverUploads">
+                                                <label class="custom-file-label" for="projectCoverUploads">Choose file</label>
+                                            </div>
                                         </div>
-                                        <input class="form-control" placeholder="File SK" type="file" name="file">
+                                        <div class="dz-preview dz-preview-single">
+                                            <div class="dz-preview-cover">
+                                                <img class="dz-preview-img" src="...html" alt="..." data-dz-thumbnail>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <div class="input-group input-group-alternative mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                            </div>
+                                            <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="subdomain">
+                                            <p id="notif"></p>
                                         </div>
                                         <input class="form-control" placeholder="Nama Desa" type="text" name="nama_desa">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <div class="input-group input-group-alternative mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="subdomain">
+                                        <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="domain">
                                         <p id="notif"></p>
                                     </div>
                                 </div>
-
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary mt-4">DAFTAR</button>
                                 </div>
