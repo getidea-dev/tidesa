@@ -123,7 +123,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="domain">
+                                        <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="subdomain">
                                         <p id="notif"></p>
                                     </div>
                                 </div>
