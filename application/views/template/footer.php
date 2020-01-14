@@ -1,4 +1,4 @@
-<script src="<?= base_url(); ?>'assets/vendor/jquery/dist/jquery.min.js') ?>"></script>
+<script src="<?= base_url(); ?>assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/js-cookie/js.cookie.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -11,7 +11,8 @@
 <script src="<?= base_url(); ?>assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/argon.min9f1e.js?v=1.1.0') ?>"></script>
+<script src="<?= base_url(); ?>assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/argon.min9f1e.js?v=1.1.0' ?>"></script>
 <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
 <script>

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="<?= base_url();?>assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
     <!-- CSS Files -->
-    <link rel="stylesheet" href="<?= base_url();?>('assets/css/argon.min9f1e.css?v=1.1.0') ?>">
+    <link rel="stylesheet" href="<?= base_url();?>assets/css/argon.min9f1e.css?v=1.1.0">
     <link href="<?= base_url();?>assets/css/argon-dashboard.css?v=1.1.0'" rel="stylesheet" />
 
 </head>
