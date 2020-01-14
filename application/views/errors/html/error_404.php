@@ -16,7 +16,7 @@ img{
 	width: 100%;
 }
 h1{
-  margin-top: 30px;
+  margin-top: 20%;
   color: black;
   text-shadow: 0px 2px 0px rgba(150, 150, 150, 1);
 }

@@ -128,8 +128,9 @@
                                             <p id="notif"></p>
                                         </div>
                                     </div>
+                                 
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary mt-4">DAFTAR</button>
+                                        <button type="submit" class="btn btn-primary  btn-block mt-4">DAFTAR</button>
                                     </div>
                                     
                                 </div>

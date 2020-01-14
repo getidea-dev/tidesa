@@ -1,23 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Auth extends CI_Controller
 {
-
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('session');
 	}
-
 	public function index()
 	{
 		$this->load->view('welcome_message');
 	}
-
 	public function register()
 	{
+		
 		//validasi form
 		$this->form_validation->set_rules('nama_lengkap', 'Nama lengkap', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email',  'required|trim|valid_email');
@@ -27,7 +24,6 @@ class Auth extends CI_Controller
 		$this->form_validation->set_rules('file', 'File', 'required|trim');
 		$this->form_validation->set_rules('nama_desa', 'Nama desa', 'required|trim');
 		$this->form_validation->set_rules('subdomain', 'Subomain', 'required|trim');
-
 		if ($this->form_validation->run() == false) {
 			//jika gagal validasi
 			$this->load->view('template/header');
@@ -45,20 +41,17 @@ class Auth extends CI_Controller
 				'nama_desa' => htmlspecialchars($this->input->post('nama_desa')),
 				'subdomain' => htmlspecialchars($this->input->post('domain'))
 			];
-
 			$this->db->insert('pengajuan_desa', $data);
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Desa anda telah berhasil di daftarkan! Menunggu konfirmasi admin</div>');
 			redirect('auth/register');
 		}
+			
 	}
-
 	public function checkSubdomain()
 	{
 		$subdomain = $this->input->post('subdomain');
-
 		echo json_encode($this->db->get_where('desa', ['subdomain' => $subdomain])->row_array());
 	}
-
 	public function test()
 	{
 		$result = $this->db->get_where('desa', ['subdomain' => '0'])->row_array();
