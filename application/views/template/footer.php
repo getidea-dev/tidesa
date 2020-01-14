@@ -1,4 +1,4 @@
-<script src="<?= base_url();?>'assets/vendor/jquery/dist/jquery.min.js') ?>"></script>
+<script src="<?= base_url();?>assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="<?= base_url();?>assets/vendor/js-cookie/js.cookie.js"></script>
 <script src="<?= base_url();?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
