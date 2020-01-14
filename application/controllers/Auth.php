@@ -19,14 +19,39 @@ class Auth extends CI_Controller
 	public function register()
 	{
 		//validasi form
-		$this->form_validation->set_rules('nama_lengkap', 'Nama lengkap', 'required|trim');
-		$this->form_validation->set_rules('email', 'Email',  'required|trim|valid_email');
-		$this->form_validation->set_rules('tempat_lahir', 'Tempat lahir', 'required|trim');
-		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal lahir', 'required|trim');
-		$this->form_validation->set_rules('no_telepon', 'No telepon', 'required|trim');
-		$this->form_validation->set_rules('file', 'File', 'required|trim');
-		$this->form_validation->set_rules('nama_desa', 'Nama desa', 'required|trim');
-		$this->form_validation->set_rules('subdomain', 'Subomain', 'required|trim');
+		$this->form_validation->set_rules('nama_lengkap', 'Nama lengkap', 'required|trim', ['required' => '%s harus di isi']);
+		$this->form_validation->set_rules(
+			'email',
+			'Email',
+			'required|trim|valid_email',
+			[
+				'required' => '%s harus di isi',
+				'valid_email' => '%s bukanlah format email'
+			]
+		);
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat lahir', 'required|trim', ['required' => '%s harus di isi']);
+		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal lahir', 'required|trim', ['required' => '%s harus di isi']);
+		$this->form_validation->set_rules(
+			'no_telepon',
+			'No telepon',
+			'required|trim|integer',
+			[
+				'required' => '%s harus di isi',
+				'integer' => '%s bukanlah nomor telepon'
+			]
+
+		);
+		// $this->form_validation->set_rules('file', 'File', 'required');
+		$this->form_validation->set_rules('nama_desa', 'Nama desa', 'required|trim', ['required' => '%s harus di isi']);
+		$this->form_validation->set_rules(
+			'subdomain',
+			'Subdomain',
+			'required|trim|is_unique[desa.subdomain]',
+			[
+				'is_unique' => 'Subdomain telah terpakai!',
+				'required' => '%s harus di isi'
+			]
+		);
 
 		if ($this->form_validation->run() == false) {
 			//jika gagal validasi
@@ -43,7 +68,7 @@ class Auth extends CI_Controller
 				'no_telepon' => htmlspecialchars($this->input->post('no_telepon')),
 				'file' => 'gambar',
 				'nama_desa' => htmlspecialchars($this->input->post('nama_desa')),
-				'subdomain' => htmlspecialchars($this->input->post('domain'))
+				'subdomain' => htmlspecialchars($this->input->post('subdomain'))
 			];
 
 			$this->db->insert('pengajuan_desa', $data);
