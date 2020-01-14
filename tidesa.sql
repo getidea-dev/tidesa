@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2020 at 06:35 AM
+-- Generation Time: Jan 14, 2020 at 01:40 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -58,15 +58,16 @@ CREATE TABLE `pengajuan_desa` (
   `no_telepon` varchar(255) NOT NULL,
   `file` varchar(255) NOT NULL,
   `nama_desa` varchar(255) NOT NULL,
-  `domain` varchar(255) NOT NULL
+  `subdomain` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengajuan_desa`
 --
 
-INSERT INTO `pengajuan_desa` (`id`, `nama_lengkap`, `email`, `tempat_lahir`, `tanggal_lahir`, `no_telepon`, `file`, `nama_desa`, `domain`) VALUES
-(1, 'gema', 'gema@gmail.com', 'garut', '1998-03-23', '832947987', 'gambar', 'cibiuk', 'cibiuk');
+INSERT INTO `pengajuan_desa` (`id`, `nama_lengkap`, `email`, `tempat_lahir`, `tanggal_lahir`, `no_telepon`, `file`, `nama_desa`, `subdomain`) VALUES
+(1, 'gema', 'gema@gmail.com', 'garut', '1998-03-23', '832947987', 'gambar', 'cibiuk', 'cibiuk'),
+(2, 'Rifan alamsyah', 'sfahmifadillah@gmail.com', 'garut', '0000-00-00', '08999999999999', 'gambar', 'sihuni', 'cihuni');
 
 -- --------------------------------------------------------
 
@@ -76,7 +77,7 @@ INSERT INTO `pengajuan_desa` (`id`, `nama_lengkap`, `email`, `tempat_lahir`, `ta
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -84,7 +85,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `user_name`, `password`) VALUES
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin'),
 (2, 'sadang', 'sadang'),
 (3, 'suci', 'suci');
@@ -125,7 +126,7 @@ ALTER TABLE `desa`
 -- AUTO_INCREMENT for table `pengajuan_desa`
 --
 ALTER TABLE `pengajuan_desa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
