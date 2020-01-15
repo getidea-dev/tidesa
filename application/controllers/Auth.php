@@ -32,11 +32,24 @@ class Auth extends CI_Controller
 			if ($user) {
 				//cek password
 				if ($password == $user['password']) {
-					$data = [
-						'username' => $user['username'],
-					];
-					$this->session->set_userdata($data);
-					redirect('admin');
+					$desa = $this->db->get_where('desa', ['user_id' => $user['id']])->num_rows();
+					if($desa == 1){
+						$subdomain = $this->db->get_where('desa', ['user_id' => $user['id']])->row_array();
+						$data = [
+							'username' => $user['username'],
+							'id' => $user['id'],
+							'subdomain' => $subdomain['subdomain'],
+						];
+						$this->session->set_userdata($data);
+						header('Location: http://localhost/'. $data['subdomain'] .'/admin');
+					}else{
+						$data = [
+							'username' => $user['username'],
+							'id' => $user['id'],
+						];
+						$this->session->set_userdata($data);
+						redirect('admin');
+					}
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
 					redirect('auth');
