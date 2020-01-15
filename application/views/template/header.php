@@ -14,12 +14,15 @@
     <!-- Icons -->
     <link href="<?= base_url(); ?>assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
     <link href="<?= base_url();?>assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="<?= base_url();?>assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= base_url();?>assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url();?>assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
     <!-- CSS Files -->
     <link rel="stylesheet" href="<?= base_url();?>assets/css/argon.min9f1e.css?v=1.1.0">
     <link href="<?= base_url();?>assets/css/argon-dashboard.css?v=1.1.0'" rel="stylesheet" />
+    <link href="<?= base_url();?>assets/css/style.css" rel="stylesheet" />
+
 
 </head>
 

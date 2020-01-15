@@ -1,16 +1,18 @@
 <!-- Header -->
-<div class="header bg-gradient-primary py-5 py-lg-8">
+
+
+<div class="header  py-5 ">
     <div class="container ">
         <div class="header-body text-center pb-8">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-6">
-                    <h1 class="text-white">Welcome!</h1>
-                    <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.<?= var_dump($_POST)  ?></p>
+                    <img src="<?= base_url(); ?>assets/img/brand/logo.png" id="logo-tidesa" alt="">
+                    <h1 class="text-primary pt-3">SELAMAT DATANG!</h1>
+                    <p class="text-lead text-default">Silahkan registrasi untuk mendaftar di Teknologi Informasi Desa</p>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Page content -->
     <div class="container mt--8 pb-2">
         <!-- Table -->
@@ -18,37 +20,38 @@
             <div class="col ">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-body px-lg-5 py-lg-5">
-
                         <?= $this->session->flashdata('message'); ?>
                         <form role="form" method="post" action="<?= base_url('auth/register') ?>">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group input-group-alternative ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                                <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                             </div>
                                             <input class="form-control" placeholder="Nama Lengkap" name="nama_lengkap" type="text" value="<?= set_value('nama_lengkap'); ?>">
                                         </div>
-                                        <?= form_error('nama_lengkap', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
+                                        <?= form_error('nama_lengkap', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group input-group-alternative ">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                             </div>
-                                            <input class="form-control" placeholder="text" name="email" type="ema" value="<?= set_value('email'); ?>">
+                                            <input class="form-control" placeholder="Email" name="email" type="ema" value="<?= set_value('email'); ?>">
                                         </div>
-                                        <?= form_error('email', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
+                                        <?= form_error('email', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group input-group-alternative ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                                <span class="input-group-text"><i class="ni ni-tag"></i></span>
                                             </div>
                                             <input class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" type="text" value="<?= set_value('tempat_lahir'); ?>">
                                         </div>
-                                        <?= form_error('tempat_lahir', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
+                                        <?= form_error('tempat_lahir', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
+                                        
+                                        
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
@@ -57,16 +60,16 @@
                                             </div>
                                             <input class="form-control datepicker" placeholder="Pilih Tanggal" type="text" name="tanggal_lahir" value="<?= set_value('tanggal_lahir'); ?>">
                                         </div>
-                                        <?= form_error('tanggal_lahir', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
+                                        <?= form_error('tanggal_lahir', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group input-group-alternative ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                                <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                                             </div>
                                             <input class="form-control" placeholder="Nomor Telepon" type="number" name="no_telepon" value="<?= set_value('no_telepon'); ?>">
                                         </div>
-                                        <?= form_error('no_telepon', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
+                                        <?= form_error('no_telepon', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -108,39 +111,38 @@
                                         </ul>
                                     </div>
                                     <br>
-                                    <?= form_error('file', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
-
+                                    <?= form_error('file', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
                                     <!-- stop dropzone -->
-
                                     <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group input-group-alternative ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                                <span class="input-group-text"><i class="ni ni-building"></i></span>
                                             </div>
                                             <input class="form-control" placeholder="Nama Desa" type="text" name="nama_desa" value="<?= set_value('nama_desa'); ?>">
                                         </div>
-                                        <?= form_error('nama_desa', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
+                                        <?= form_error('nama_desa', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
                                     </div>
-
                                     <div class="form-group">
-                                        <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group input-group-alternative ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                                <span class="input-group-text"><i class="ni ni-spaceship"></i></span>
                                             </div>
                                             <input class="form-control" placeholder="Subdomain desa" type="text" id="subdomain" name="subdomain" value="<?= set_value('subdomain'); ?>">
-                                            <p id="notif"></p>
-
+                                            
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="notif"></span>
+                                            </div>
                                         </div>
-                                        <?= form_error('subdomain', '<div class="alert alert-sm alert-primary" role="alert">', '</div>'); ?>
+                                        <?= form_error('subdomain', '<span class="badge badge-pill badge-warning">', '</span>'); ?>
                                     </div>
-                                 
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary  btn-block mt-4">DAFTAR</button>
                                     </div>
+                                    
+
 
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>
