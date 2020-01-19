@@ -108,7 +108,8 @@ class Auth extends CI_Controller
 				'subdomain' => htmlspecialchars($this->input->post('subdomain'))
 			];
 			$this->db->insert('pengajuan_desa', $data);
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Desa anda telah berhasil di daftarkan! Menunggu konfirmasi admin</div>');
+			$this->session->set_flashdata('flash','Ditambahkan');
+			// $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Desa anda telah berhasil di daftarkan! Menunggu konfirmasi admin</div>');
 			redirect('auth/register');
 		}
 	}
@@ -120,7 +121,7 @@ class Auth extends CI_Controller
 	public function logout()
 	{
 		$this->session->unset_userdata('username');
-		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kamu berhasil logout!</div>');
+		$this->session->set_flashdata('message', 'Logout');
 		redirect('auth');
 	}
 }

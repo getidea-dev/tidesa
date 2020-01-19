@@ -1,6 +1,6 @@
 <!-- Header -->
 
-
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
 <div class="header  py-5 ">
     <div class="container ">
         <div class="header-body text-center pb-8">
